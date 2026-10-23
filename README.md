@@ -36,7 +36,7 @@ python -m unittest discover -s tests -v
 
 Это дерево проекта:
 
-''''
+```
 
 cafe-report/
 ├── app/               # Основной код приложения
@@ -50,4 +50,4 @@ cafe-report/
 ├── README.md          # Главный файл с описанием и структурой проекта
 └── requirements.txt   # Список зависимостей и библиотек для Python
 
-''''
+```
