@@ -1,5 +1,7 @@
 # Учёт расходов в поездке. Один файл: и данные, и расчёты, и вывод на экран.
 # Это стартовая точка домашней работы: вынести расчёты в отдельный модуль.
+from rich import print
+from calculator import calculate_total, calculate_average
 
 EXPENSES = [
     {"day": 1, "category": "еда", "amount": 540},
@@ -15,24 +17,12 @@ EXPENSES = [
 ]
 
 
-def calculate_total(expenses):
-    total = 0
-    for expense in expenses:
-        total += expense["amount"]
-    return total
-
-
-def calculate_average(expenses):
-    if not expenses:
-        raise ValueError("список расходов пуст")
-    return calculate_total(expenses) / len(expenses)
-
 
 def format_report(expenses):
     total = calculate_total(expenses)
     average = calculate_average(expenses)
     lines = [
-        "ОТЧЁТ ПО ПОЕЗДКЕ",
+        "[bold green]ОТЧЁТ ПОЕЗДКЕ[/bold green]",
         "-" * 32,
         f"записей: {len(expenses)}",
         f"всего потрачено: {total} ₽",
